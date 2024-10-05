@@ -8,10 +8,16 @@ from datetime import datetime
 st.set_page_config(page_title="Data Analyst Portfolio", layout="wide")
 
 # Custom CSS (place in a separate CSS file)
-def local_css(file_name):
-    with open(file_name, 'r') as f:
-        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-local_css("style.css")
+def local_css(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        st.markdown(f'<style>{response.text}</style>', unsafe_allow_html=True)
+    else:
+        st.error("Failed to load CSS from GitHub.")
+
+# Ganti dengan URL raw file CSS Anda di GitHub
+css_url = "https://raw.githubusercontent.com/yeheskieltame/Portofolio/refs/heads/main/data-analyst/style.css"
+local_css(css_url)
 
 
 # Load Lottie animations (place JSON files in a dedicated folder)
