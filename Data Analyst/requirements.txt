@@ -1,4 +1,4 @@
-streamlit
-plotly
-streamlit-lottie
-requests
+streamlit==1.22.0
+plotly==5.14.1
+streamlit-lottie==0.2.3
+requests==2.31.0
