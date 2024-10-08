@@ -213,6 +213,6 @@ footer {
   color: #fff;
 }
 .project-card img {
-  width: 20rem;
+  width: 100%;
   border-radius: 10px;
 }
